@@ -1,0 +1,9 @@
+wheel
+notebook
+matplotlib
+numpy
+pandas
+xlrd
+openpyxl
+numpy
+numba
