@@ -8,4 +8,4 @@ all:
 
 clean:
 	rm -f ./grap/*.pdf
-	rm -f *.aux *.bbl *.bcf *.blg *.log *out *.run.xml *.toc
+	rm -f *.aux *.bbl *.bcf *.blg *.log *out *.run.xml *.toc *.snm *.nav
