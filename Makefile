@@ -34,3 +34,4 @@ install_pack:
 clean:
 	rm -f ./grap/*.pdf
 	rm -f *.aux *.bbl *.bcf *.blg *.log *out *.run.xml *.toc
+	rm -f tp-output.fodt tp-output.pdf diplom.pdf
