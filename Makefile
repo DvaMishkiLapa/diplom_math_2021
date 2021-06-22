@@ -2,7 +2,7 @@ SHELL=/bin/bash
 
 THEME = Программная реализация динамического моделирования погружения сваи
 STUDENT = А.А. Уткин
-DEGREE = д.ф.-м.н.
+DEGREE = д. ф.-м. н., проф.
 DIRECTOR = М.И. Каменский
 SED = "s/{{theme}}/${THEME}/; s/{{student}}/${STUDENT}/; s/{{degree}}/${DEGREE}/; s/{{director}}/${DIRECTOR}/"
 DOC = diplom
