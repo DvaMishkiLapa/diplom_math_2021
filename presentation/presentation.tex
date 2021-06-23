@@ -85,6 +85,56 @@
 
 
     \begin{frame}
+        \frametitle{Задача оптимизации}
+        \begin{center}
+            \begin{minipage}[h]{0.97\linewidth}
+                Математической модель направляющего импульса может быть представлена в виде тригонометрического полинома:
+                \begin{equation}\label{eq:harmonic_sum}
+                    \begin{gathered}
+                        f(t, \lambda) = \sum\limits_{k = 1}^n \lambda_k \cdot \cos(kt)
+                    \end{gathered}
+                \end{equation}
+                Пусть $f_{\max}(t)$ --- максимальное значение импульса силы за время $t$, $f_{\min}(t)$ --- минимальное значение импульса за время $t$. Тогда:
+                \begin{equation}\label{eq:optim}
+                    \begin{gathered}
+                        K = \left| \frac{f_{\max}(t)}{f_{\min}(t)} \right| \rightarrow \max \\
+                        f_{\max} = \max_t f(t, \lambda), \ f_{\min} = \min_t f(t, \lambda)
+                    \end{gathered}
+                \end{equation}
+                Число $K$ будем называть коэффициентом асимметрии полинома (\ref{eq:harmonic_sum}).
+            \end{minipage}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Задача оптимизации}
+        \begin{center}
+            \begin{minipage}[h]{0.97\linewidth}
+                Для достижения коэффициентом асимметрии максимального значения необходимо решение следующей задачи:
+                \begin{equation}\label{eq:math_task}
+                    \begin{gathered}
+                        \inf_t f(t, \lambda) \rightarrow \sup_\lambda, \textrm{ где } t \in [0, \pi]\\
+                        \sum\limits_{k = 1}^n \lambda_k = c, \textrm{ где } c = const > 0
+                    \end{gathered}
+                \end{equation}
+                Оптимальность (\ref{eq:harmonic_sum}) может быть доказана следующей теоремой:
+                \begin{block}{Теорема\footnotemark[3]}\label{teorema}
+                    Многочлен (\ref{eq:harmonic_sum}) является оптимальным т. и т. т. , когда он с точностью до постоянного множителя имеет вид суммы Фейера:
+                    \begin{equation}\label{eq:feer}
+                        \begin{gathered}
+                            f_n(t) = \sum\limits_{k = 1}^n (n + 1 - k) \cos(kt), \
+                            \max \limits_{\lambda} K_n(\lambda) = n
+                        \end{gathered}
+                    \end{equation}
+                \end{block}
+            \end{minipage}
+        \end{center}
+        \footnotetext[3]{\label{foot-3} Костин Д. В. Бифуркация резонансных колебаний и оптимизация тригонометрического импульса по коэффициенту несимметрии
+        // Математический сборник. --- М., 2016. — С. 90—109.}
+    \end{frame}
+
+
+    \begin{frame}
         \frametitle{Конструкция импульсного погружателя}
         \begin{center}
             \begin{minipage}[h]{0.97\linewidth}
@@ -173,7 +223,7 @@
             \begin{minipage}[h]{0.97\linewidth}
                 При использовании нескольких пар дебалансов, вышестоящий уровень дебалансов должен иметь угловую скорость в два раза выше, чем прошлый.\\
                 \newline
-                \begin{minipage}[h]{0.44\linewidth}
+                \begin{minipage}[h]{0.42\linewidth}
                     \begin{figure}[h]
                         \centering
                         $x(t) = \lambda_1 \cos (\omega t)$
@@ -182,7 +232,7 @@
                     \end{figure}
                 \end{minipage}
                 \hfill
-                \begin{minipage}[h]{0.44\linewidth}
+                \begin{minipage}[h]{0.42\linewidth}
                     \begin{figure}[h]
                         \centering
                         $x(t) = \lambda_1 \cos (\omega t) + \lambda_2 \cos (2\omega t)$
@@ -194,63 +244,30 @@
         \end{center}
     \end{frame}
 
+
     \begin{frame}
         \frametitle{Гармонические нескольких пар дебалансов}
         \begin{center}
             \begin{minipage}[h]{0.97\linewidth}
                 Гармоническое колебания для $n$ дебалансов, где $k$ --- порядковый номер пары дебалансов, будет иметь вид:
-                \begin{equation}\label{eq:harmonic_sum}
+                \begin{equation}\label{eq:short_harmonic_sum}
                     \begin{gathered}
-                        F = \sum\limits_{k = 1}^n 2 \lambda_k \cdot \cos (k \omega t), \lambda = m \cdot \omega^2 \cdot l
+                        F = \sum\limits_{k = 1}^n 2 \lambda_k \cdot \cos (k \omega t), \ \lambda = m \cdot \omega^2 \cdot l
                     \end{gathered}
                 \end{equation}
-                Использование нескольких пар дебалансов разных характеристик позволяет увеличить импульс,
-                направленный на погружение свайного элемента и уменьшить импульс, направленный в противоположную сторону.
-            \end{minipage}
-        \end{center}
-    \end{frame}
-
-
-    \begin{frame}
-        \frametitle{Задача оптимизации}
-        \begin{center}
-            \begin{minipage}[h]{0.97\linewidth}
-                Пусть $f_{\max}(t)$ --- максимальное значение импульса силы за время $t$, $f_{\min}(t)$ --- минимальное значение импульса за время $t$. Тогда:
-                \begin{equation}
-                    \begin{gathered}
-                        K = \left| \frac{f_{\max}(t)}{f_{\min}(t)} \right| \rightarrow \max
-                    \end{gathered}
-                \end{equation}
-                \begin{block}{Теорема\footnotemark[3]}\label{teorema}
-                    Многочлен (\ref{eq:harmonic_sum}) является оптимальным т. и т. т. , когда он с точностью до постоянного множителя имеет вид суммы Фейера:
-                    \begin{equation}\label{eq:feer}
-                        \begin{gathered}
-                            f_n(t) = \sum\limits_{k = 1}^n (n + 1 - k) \cos(kt)\\
-                            \max \limits_{\lambda} K_n(\lambda) = n
-                        \end{gathered}
-                    \end{equation}
-                \end{block}
-            \end{minipage}
-        \end{center}
-        \footnotetext[3]{\label{foot-3} Костин Д. В. Бифуркация резонансных колебаний и оптимизация тригонометрического импульса по коэффициенту несимметрии
-        // Математический сборник. --- М., 2016. — С. 90—109.}
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Задача оптимизации}
-        \begin{center}
-            \begin{minipage}[h]{0.97\linewidth}
-                Исходя из теоремы выше, следует, что:
-                \begin{equation}
+                \noindent где $n$ --- количество пар дебалансов, $k$ --- порядковый номер пары дебалансов.
+                Из этого теоремы об оптимальности коэффициента ассиметрии следует, что:
+                \begin{equation}\label{eq:opt_attitude}
                     \begin{gathered}
                         \lambda_k = \frac{n - k + 1}{n} \cdot \lambda_1,\\
                         \textrm{где } \lambda_1 = m_1 \cdot \omega_{1}^{2} \cdot l_1
                     \end{gathered}
                 \end{equation}
-                Это позволяет найти коэффициент $\lambda_k$ для $k$-й пары дебалансов, когда общее количество дебалансов погружателя --- $n$.
+                \noindent где $n$ --- количество пар дебалансов, $k$ --- порядковый номер пары дебалансов.
             \end{minipage}
         \end{center}
     \end{frame}
+
 
     \begin{frame}
         \frametitle{Программная реализация}
@@ -259,7 +276,7 @@
                 При помощи теоремы об оптимальности модели полигармонического импульса и на основе теории вибрационных машин
                 на языке Python была разработана программа для динамического моделирования процесса погружения сваи.
                 \newline
-                \begin{minipage}[h]{0.5\linewidth}
+                \begin{minipage}[h]{0.49\linewidth}
                     \begin{figure}[h]
                         \centering
                         \includegraphics[width=1\linewidth]{../img/xolm_3_linux_params.png}
@@ -267,7 +284,7 @@
                     \end{figure}
                 \end{minipage}
                 \hfill
-                \begin{minipage}[h]{0.5\linewidth}
+                \begin{minipage}[h]{0.49\linewidth}
                     \begin{figure}[h]
                         \centering
                         \includegraphics[width=1\linewidth]{../img/xolm_3_linux_graps.png}
