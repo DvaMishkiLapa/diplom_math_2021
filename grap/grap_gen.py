@@ -17,9 +17,11 @@ def impulse(count_deb, name, factor=1):
         y.append(sum(summa))
         summa.clear()
 
-    plt.figure(figsize=(5.8, 4.0))
+    plt.figure(figsize=(7, 7))
     plt.plot(x, y, linewidth=2)
     plt.grid()
+    plt.xlabel('Время (с)')
+    plt.ylabel('Сила импульса')
     plt.savefig("./grap/{0}.{1}".format(name, 'pdf'))
     # plt.savefig('./grap/impulse.pgf')
 
