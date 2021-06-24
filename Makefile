@@ -19,8 +19,7 @@ pdflatex:
 
 titlepage:
 	@sed -e ${SED} titlepage.fodt > tp-output.fodt
-	libreoffice --headless --convert-to -density 300 png tp-output.fodt
-	convert -density 300 -quality 100 tp-output.png tp-output.pdf
+	libreoffice --headless --convert-to pdf tp-output.fodt
 
 overfull:
 	@pdflatex ${DOC}.tex | grep -va Underfull | grep -a . | grep -aC 12 Overfull

@@ -17,7 +17,7 @@ def impulse(count_deb, name, factor=1):
         y.append(sum(summa))
         summa.clear()
 
-    plt.figure(figsize=(7, 7))
+    plt.figure(figsize=(6.5, 6.5))
     plt.plot(x, y, linewidth=2)
     plt.grid()
     plt.xlabel('Время (с)')
